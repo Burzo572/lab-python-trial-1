@@ -1,0 +1,594 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "6EkcabqGnlSM"
+      },
+      "source": [
+        "<img src=\"https://github.com/Burzo572/lab-python-trial-1/blob/main/assets/ga-logo.png?raw=1\" style=\"float: left; margin: 20px; height: 55px\">\n",
+        "\n",
+        "# Lab: Python Trial I\n",
+        "\n",
+        "---"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "eZbpkFQKnlSO"
+      },
+      "source": [
+        "The following Python problems are aimed at getting you acquainted with independently programming \"simple\" Python tasks. We recognize it would be very easy to cheat here (for example, using ChatGPT). However, this would set you up very poorly for the course to come. If you're a beginner programmer, you're meant to struggle a bit here!"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ViixPScdnlSP"
+      },
+      "source": [
+        "## Problem 1: BMI\n",
+        "\n",
+        "You're a physician compute the body mass index (BMI) of one of your patients.\n",
+        "\n",
+        "**Step 1:** Create a variable `weight` that has the value 90.2, the patient's weight in kilograms. Then, create a variable called `height` with a value of 1.8, the patient's height in meters."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "id": "2z4s0uPsnlSQ"
+      },
+      "outputs": [],
+      "source": [
+        "weight = 90.2\n",
+        "height = 1.8"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "HU8VWFxonlSR"
+      },
+      "source": [
+        "**Step 2:** Compute the patient's BMI as follows:\n",
+        "\n",
+        "$$BMI = \\frac{w}{h^2}$$\n",
+        "\n",
+        "Define this value as a variable called `bmi` and print this variable to the screen."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 6,
+      "metadata": {
+        "id": "kNt1N3YrnlSS",
+        "outputId": "322a43a8-41d2-4739-fea7-7aa5e5f85088",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "27.839506172839506"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 6
+        }
+      ],
+      "source": [
+        "BMI = weight / height **2\n",
+        "BMI"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "Tilk3vNWnlSS"
+      },
+      "source": [
+        "## Problem 2: Movie Ratings\n",
+        "**Step 1:** Create a variable called `age` that represents a moviegoer's age."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "age = [30, 45, 50, 11, 15, 16]"
+      ],
+      "metadata": {
+        "id": "a38OXK2IoguU"
+      },
+      "execution_count": 2,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "eKA7SFmvnlSU"
+      },
+      "source": [
+        "**Step 2:** Write a conditional statement that tells the user what movies they can see. The logic should work as follows:\n",
+        "\n",
+        "* If the user is 12 or below, your code should print \"You may see movies rated G or PG\"\n",
+        "* If the user is between 13 and 16 years old, your code should print \"You may see movies rated PG-13 or below\"\n",
+        "* If the user is 17 or older, your code should print \"You can see any movie without parental guidance!\""
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 7,
+      "metadata": {
+        "id": "zpmiiXklnlSU",
+        "outputId": "6963ce6a-81a3-4cba-fa84-ff8b0958e128",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "You can see any movie without parental guidance!\n",
+            "You can see any movie without parental guidance!\n",
+            "You can see any movie without parental guidance!\n",
+            "You may see movies rated G or PG\n",
+            "You may see movies rated PG-13 or below\n",
+            "You may see movies rated PG-13 or below\n"
+          ]
+        }
+      ],
+      "source": [
+        "age = [30, 45, 50, 11, 15, 16]\n",
+        "for user in age:\n",
+        "  if user > 17:\n",
+        "    print(f'You can see any movie without parental guidance!')\n",
+        "  elif  13 <= user <= 16:\n",
+        "    print(f'You may see movies rated PG-13 or below')\n",
+        "  else:\n",
+        "    print(f'You may see movies rated G or PG')\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "_GFzjlPQnlSU"
+      },
+      "source": [
+        "## Problem 3: Simple Loops\n",
+        "In this section, I'll give you several problems that can be solved by writing a for loop, sometimes also incorporating an if-statement."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "IX1s12KrnlSV"
+      },
+      "source": [
+        "**Loop 1:** Print all the numbers 1 through 10"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 16,
+      "metadata": {
+        "id": "gFnL8xCRnlSV",
+        "outputId": "604a5ca1-84f4-4038-c9f3-e3afa0a5128b",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1\n",
+            "2\n",
+            "3\n",
+            "4\n",
+            "5\n",
+            "6\n",
+            "7\n",
+            "8\n",
+            "9\n",
+            "10\n"
+          ]
+        }
+      ],
+      "source": [
+        "for number in range (1,11):\n",
+        "   print(number)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "LfmhiQXCnlSV"
+      },
+      "source": [
+        "**Loop 2:** Print all the odd numbers between 20 and 40"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 19,
+      "metadata": {
+        "id": "znm7kAJKnlSV",
+        "outputId": "fea05b63-202f-4b3e-8be6-5bbcbcb4db82",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "21\n",
+            "24\n",
+            "27\n",
+            "30\n",
+            "33\n",
+            "36\n",
+            "39\n"
+          ]
+        }
+      ],
+      "source": [
+        "for number in range (20,40):\n",
+        "  if number %3==0:\n",
+        "    print(number)\n",
+        ""
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "7z5ocarfnlSW"
+      },
+      "source": [
+        "**Loop 3:** Print only the elements of the given list that are divisible by 3."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 20,
+      "metadata": {
+        "id": "m1wFOSYonlSW"
+      },
+      "outputs": [],
+      "source": [
+        "my_list = [56, 93, 67, 66, 34, 42, 75, 79, 101, 45]"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 23,
+      "metadata": {
+        "id": "1zofllvinlSX",
+        "outputId": "4a7e7365-491c-49a6-e747-8b8af0ff4746",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "93\n",
+            "66\n",
+            "42\n",
+            "75\n",
+            "45\n"
+          ]
+        }
+      ],
+      "source": [
+        "for numbers in my_list:\n",
+        "  if numbers %3==0:\n",
+        "    print(numbers)\n",
+        ""
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "Tn9Slqs-nlSX"
+      },
+      "source": [
+        "**Loop 4:** Print only the names in the list that begin with a vowel."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 34,
+      "metadata": {
+        "id": "68SwcaJlnlSX"
+      },
+      "outputs": [],
+      "source": [
+        "names = ['Hank', 'Alanna', 'Mark', 'Leonard', 'Prem', 'Tanner', 'Landry', 'Faye']"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 40,
+      "metadata": {
+        "scrolled": true,
+        "id": "KNF5hOtSnlSX",
+        "outputId": "d496ad31-95f6-400f-aee1-bf7c0c841c5d",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Alanna\n"
+          ]
+        }
+      ],
+      "source": [
+        "for name in names:\n",
+        "  if name[0] == 'A':\n",
+        "    print(name)\n",
+        "  elif name[0] == 'E':\n",
+        "    print(name)\n",
+        "  elif name[0]== 'I':\n",
+        "    print(name)\n",
+        "  elif name[0]== 'O':\n",
+        "    print(name)\n",
+        "  elif name[0]== 'U':\n",
+        "    print(name)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "AZFLP9GtnlSY"
+      },
+      "source": [
+        "## Problem 4: Harder Loops"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "ulDDPKgbnlSY"
+      },
+      "source": [
+        "**Loop 5:** Below you have a secret message to decode. To decode this message, remove all bad letters from the string. Create a new string called `decoded_message` that is the full message output."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 22,
+      "metadata": {
+        "id": "wJDHhPbSnlSY"
+      },
+      "outputs": [],
+      "source": [
+        "coded_message = 'GKHA RTUDLWBKES'\n",
+        "bad_letters = ['M', 'V', 'O', 'J', 'I',\n",
+        "               'Q', 'Z', 'X', 'H', 'D',\n",
+        "               'K', 'P', 'B', 'T', 'W',\n",
+        "               'F', 'Y', 'C', 'N']"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 29,
+      "metadata": {
+        "id": "2I8U7OZMnlSZ",
+        "outputId": "8770ff49-cd3e-499b-ca95-68714d3cc335",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "GA RULES\n"
+          ]
+        }
+      ],
+      "source": [
+        "decoded_message = ''\n",
+        "\n",
+        "for letters in coded_message:\n",
+        "  if not letters in bad_letters:\n",
+        "    decoded_message = decoded_message + letters\n",
+        "\n",
+        "print(decoded_message)\n",
+        "\n",
+        "\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "MqwjGZRfnlSZ"
+      },
+      "source": [
+        "**Loop 6:** Again, we have a coded message, this time as a **Caeser cipher**. A Caeser cipher is one in which all letters are replaced with the letter 3 letters to the right. So, A becomes D, B becomes E, etc. To help, I've provided the decoding cipher. Use this cipher to decode the string. Call the decoded string `decoded_message` and print it to the screen.\n",
+        "\n",
+        "_Hint:_ Characters in the message that are not in the cipher are to be left as-is. You can do this by using `.get()` instead of using `[]`s. For example:\n",
+        "\n",
+        "* `cipher['?']` gives an error\n",
+        "* `cipher.get('?', '?')` returns `?` since `?` was not found in `cipher`"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 3,
+      "metadata": {
+        "id": "adcUkq6wnlSZ"
+      },
+      "outputs": [],
+      "source": [
+        "cipher = {\n",
+        "    'A': 'D', 'B': 'E', 'C': 'F', 'D': 'G', 'E': 'H',\n",
+        "    'F': 'I', 'G': 'J', 'H': 'K', 'I': 'L', 'J': 'M',\n",
+        "    'K': 'N', 'L': 'O', 'M': 'P', 'N': 'Q', 'O': 'R',\n",
+        "    'P': 'S', 'Q': 'T', 'R': 'U', 'S': 'V', 'T': 'W',\n",
+        "    'U': 'X', 'V': 'Y', 'W': 'Z', 'X': 'A', 'Y': 'B',\n",
+        "    'Z': 'C'}"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "metadata": {
+        "id": "XdXohT7fnlSZ"
+      },
+      "outputs": [],
+      "source": [
+        "coded_message = \"\"\"F AL JV EXFO QLPP\n",
+        "ZEBZH JV KXFIP\n",
+        "YXYV ELT VLR CBBIFK'?\n",
+        "CBBIFKD DLLA XP EBII\"\"\""
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 8,
+      "metadata": {
+        "id": "y5foZRIenlSa",
+        "outputId": "c7ed67b5-50cb-4970-f829-1a919193df53",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "I DO MY HAIR TOSS\n",
+            "CHECK MY NAILS\n",
+            "BABY HOW YOU FEELIN'?\n",
+            "FEELING GOOD AS HELL\n"
+          ]
+        }
+      ],
+      "source": [
+        "decoded_message = \"\"\n",
+        "\n",
+        "for letters in coded_message:\n",
+        "    decoded_message=decoded_message + cipher.get(letters, letters)\n",
+        "\n",
+        "\n",
+        "print(decoded_message)\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "txcInRBInlSa"
+      },
+      "source": [
+        "**Loop 7:** As a hacker, you frequently intercept top secret government messages as raw strings of numbers. Luckily, decoding is easy: you can convert each integer to its corresponding ASCII character with the `chr()` function. For example: `chr(65)` is `'A'`. The trouble is, your data comes as one hugely long string! Decode this message, saving it as a string called `decoded_message` and print it to the screen."
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 22,
+      "metadata": {
+        "id": "HVtEdfBOnlSa"
+      },
+      "outputs": [],
+      "source": [
+        "coded_message = '84 111 109 111 114 114 111 119 44 32 97 110 100 32 116 111 109 111 114 114 111 119 44 32 97 110 100 32 116 111 109 111 114 114 111 119 44 10 67 114 101 101 112 115 32 105 110 32 116 104 105 115 32 112 101 116 116 121 32 112 97 99 101 32 102 114 111 109 32 100 97 121 32 116 111 32 100 97 121 44 10 84 111 32 116 104 101 32 108 97 115 116 32 115 121 108 108 97 98 108 101 32 111 102 32 114 101 99 111 114 100 101 100 32 116 105 109 101 59 10 65 110 100 32 97 108 108 32 111 117 114 32 121 101 115 116 101 114 100 97 121 115 32 104 97 118 101 32 108 105 103 104 116 101 100 32 102 111 111 108 115 10 84 104 101 32 119 97 121 32 116 111 32 100 117 115 116 121 32 100 101 97 116 104 46 32 79 117 116 44 32 111 117 116 44 32 98 114 105 101 102 32 99 97 110 100 108 101 33 10 76 105 102 101 39 115 32 98 117 116 32 97 32 119 97 108 107 105 110 103 32 115 104 97 100 111 119 44 32 97 32 112 111 111 114 32 112 108 97 121 101 114 44 10 84 104 97 116 32 115 116 114 117 116 115 32 97 110 100 32 102 114 101 116 115 32 104 105 115 32 104 111 117 114 32 117 112 111 110 32 116 104 101 32 115 116 97 103 101 44 10 65 110 100 32 116 104 101 110 32 105 115 32 104 101 97 114 100 32 110 111 32 109 111 114 101 46 32 73 116 32 105 115 32 97 32 116 97 108 101 10 84 111 108 100 32 98 121 32 97 110 32 105 100 105 111 116 44 32 102 117 108 108 32 111 102 32 115 111 117 110 100 32 97 110 100 32 102 117 114 121 44 10 83 105 103 110 105 102 121 105 110 103 32 110 111 116 104 105 110 103 46'"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 31,
+      "metadata": {
+        "id": "7C79EY2fnlSb",
+        "outputId": "cbaca9a4-8735-4566-c695-b848ed312251",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Tomorrow, and tomorrow, and tomorrow,\n",
+            "Creeps in this petty pace from day to day,\n",
+            "To the last syllable of recorded time;\n",
+            "And all our yesterdays have lighted fools\n",
+            "The way to dusty death. Out, out, brief candle!\n",
+            "Life's but a walking shadow, a poor player,\n",
+            "That struts and frets his hour upon the stage,\n",
+            "And then is heard no more. It is a tale\n",
+            "Told by an idiot, full of sound and fury,\n",
+            "Signifying nothing.\n"
+          ]
+        }
+      ],
+      "source": [
+        "decoded_message = ''\n",
+        "coded_message_split = coded_message.split()\n",
+        "for numbers in coded_message_split:\n",
+        "    decoded_message=decoded_message+chr(int(numbers))\n",
+        "\n",
+        "\n",
+        "print(decoded_message)\n",
+        "\n",
+        "\n",
+        "\n",
+        "# coded_message_number = int(coded_message)\n",
+        "# for numbers in coded_message:\n",
+        "#   if numbers chr():\n",
+        "#     decoded_message=decoded_message+numbers\n",
+        "\n",
+        "# print(decoded_message)"
+      ]
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "display_name": "Python 3 (ipykernel)",
+      "language": "python",
+      "name": "python3"
+    },
+    "language_info": {
+      "codemirror_mode": {
+        "name": "ipython",
+        "version": 3
+      },
+      "file_extension": ".py",
+      "mimetype": "text/x-python",
+      "name": "python",
+      "nbconvert_exporter": "python",
+      "pygments_lexer": "ipython3",
+      "version": "3.13.3"
+    },
+    "vscode": {
+      "interpreter": {
+        "hash": "31f2aee4e71d21fbe5cf8b01ff0e069b9275f58929596ceb00d14d90e3e16cd6"
+      }
+    },
+    "colab": {
+      "provenance": []
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 0
+}
